@@ -9,18 +9,20 @@ namespace WoWBackupHelper
 {
     class FileSystemHelper
     {
+        public DirectoryInfo WoWFolderPath { get; set; }
 
         public FileSystemHelper()
         {
-
+            
         }
 
         public void GetWoWFolderPath()
         {
-            //Directory wowDir = new Directory();
-            if(Directory.Exists(@"C:\Program Files (x86)\World of Warcraft"))
+            string path1 = @"C:\Program Files (x86)\World of Warcraft";
+            
+            if (Directory.Exists(path1))
             {
-
+                this.WoWFolderPath = new DirectoryInfo(path1);
             }
         }
     }

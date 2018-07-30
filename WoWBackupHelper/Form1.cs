@@ -16,5 +16,11 @@ namespace WoWBackupHelper
         {
             InitializeComponent();
         }
+
+        private void btnStartBackup_Click(object sender, EventArgs e)
+        {
+            BackupService bs = new BackupService();
+            bs.CreateBackupNow();
+        }
     }
 }
