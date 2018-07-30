@@ -17,8 +17,8 @@ namespace WoWBackupHelper
 
             using (ZipFile zip = new ZipFile())
             {
-                zip.AddDirectory(wtfFolder);
-                zip.AddDirectory(interfaceFolder);
+                zip.AddDirectory(wtfFolder, "WTF");
+                zip.AddDirectory(interfaceFolder, "Interface");
                 zip.Save(@"C:\temp\test.zip");
             }
 
