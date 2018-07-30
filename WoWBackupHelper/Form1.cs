@@ -49,6 +49,11 @@ namespace WoWBackupHelper
             {
                 this.progressBar1.Value = e.EntriesSaved * 100 / e.EntriesTotal;
             }
+            else if (e.EventType == ZipProgressEventType.Saving_Completed)
+            {
+                progressBar1.CreateGraphics().DrawString("Done", new Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
+            }
+  
         }
     }
 }
