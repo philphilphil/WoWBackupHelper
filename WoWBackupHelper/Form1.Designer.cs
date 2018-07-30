@@ -43,6 +43,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,7 +76,7 @@
             // 
             // btnStartBackup
             // 
-            this.btnStartBackup.Location = new System.Drawing.Point(3, 171);
+            this.btnStartBackup.Location = new System.Drawing.Point(5, 200);
             this.btnStartBackup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStartBackup.Name = "btnStartBackup";
             this.btnStartBackup.Size = new System.Drawing.Size(96, 37);
@@ -132,11 +133,12 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(363, 231);
+            this.tabControl1.Size = new System.Drawing.Size(363, 267);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.progressBar1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnStartBackup);
@@ -144,14 +146,14 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(355, 205);
+            this.tabPage1.Size = new System.Drawing.Size(355, 241);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Backup";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(260, 171);
+            this.button3.Location = new System.Drawing.Point(255, 200);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(96, 37);
@@ -211,11 +213,18 @@
             this.textBox2.TabIndex = 7;
             this.textBox2.Text = "WoW-UI-Addon-Backup_%date%-%time%.zip";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(5, 172);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(345, 23);
+            this.progressBar1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 246);
+            this.ClientSize = new System.Drawing.Size(376, 278);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
@@ -246,6 +255,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
