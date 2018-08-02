@@ -31,6 +31,8 @@ namespace WoWBackupHelper
             string wtfFolder = wowPath + "WTF";
             string interfaceFolder = wowPath + "Interface";
 
+            var backupFileName = String.Format("WoW_UI-Addon_Backup_{0}.zip", DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+
             using (ZipFile zip = new ZipFile())
             {
 
@@ -38,7 +40,7 @@ namespace WoWBackupHelper
                 zip.AddDirectory(wtfFolder, "WTF");
                 zip.AddDirectory(interfaceFolder, "Interface");
                 zip.SaveProgress += this.SetProgress;
-                zip.Save(@"C:\temp\test.zip");
+                zip.Save(@"C:\temp\" + backupFileName);
             }
 
         }
@@ -53,7 +55,7 @@ namespace WoWBackupHelper
             {
                 progressBar1.CreateGraphics().DrawString("Done", new Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
             }
-  
+
         }
     }
 }
