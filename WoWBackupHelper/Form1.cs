@@ -20,10 +20,23 @@ namespace WoWBackupHelper
 
         private void btnStartBackup_Click(object sender, EventArgs e)
         {
-            CreateBackupNow();
+            if (ValidateConfig())
+            {
+                CreateBackupNow();
+            }
+
         }
 
+        private bool ValidateConfig()
+        {
+            if (!cbBackupInterface.Checked && !cbBackupWTF.Checked)
+            {
+                MessageBox.Show("Select at least one folder to backup. (In \"Settings\"-Tab)", "Error");
+                return false;
+            }
 
+            return true;
+        }
 
         public void CreateBackupNow()
         {
@@ -37,8 +50,13 @@ namespace WoWBackupHelper
             {
 
                 zip.CompressionLevel = Ionic.Zlib.CompressionLevel.Default;
-                zip.AddDirectory(wtfFolder, "WTF");
-                zip.AddDirectory(interfaceFolder, "Interface");
+
+                if (cbBackupWTF.Checked)
+                    zip.AddDirectory(wtfFolder, "WTF");
+
+                if (cbBackupInterface.Checked)
+                    zip.AddDirectory(interfaceFolder, "Interface");
+
                 zip.SaveProgress += this.SetProgress;
                 zip.Save(@"C:\temp\" + backupFileName);
             }

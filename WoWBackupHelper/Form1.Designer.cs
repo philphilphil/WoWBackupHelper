@@ -42,6 +42,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbBackupInterface = new System.Windows.Forms.CheckBox();
+            this.cbBackupWTF = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -181,6 +183,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbBackupWTF);
+            this.tabPage2.Controls.Add(this.cbBackupInterface);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.txtBoxWoWFolder);
             this.tabPage2.Controls.Add(this.label2);
@@ -195,6 +199,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cbBackupInterface
+            // 
+            this.cbBackupInterface.AutoSize = true;
+            this.cbBackupInterface.Location = new System.Drawing.Point(5, 102);
+            this.cbBackupInterface.Name = "cbBackupInterface";
+            this.cbBackupInterface.Size = new System.Drawing.Size(225, 17);
+            this.cbBackupInterface.TabIndex = 7;
+            this.cbBackupInterface.Text = "Backup Interface folder (contains Addons)";
+            this.cbBackupInterface.UseVisualStyleBackColor = true;
+            // 
+            // cbBackupWTF
+            // 
+            this.cbBackupWTF.AutoSize = true;
+            this.cbBackupWTF.Location = new System.Drawing.Point(5, 125);
+            this.cbBackupWTF.Name = "cbBackupWTF";
+            this.cbBackupWTF.Size = new System.Drawing.Size(207, 17);
+            this.cbBackupWTF.TabIndex = 8;
+            this.cbBackupWTF.Text = "Backup WTF folder (contains settings)";
+            this.cbBackupWTF.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -230,6 +254,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.CheckBox cbBackupWTF;
+        private System.Windows.Forms.CheckBox cbBackupInterface;
     }
 }
 
