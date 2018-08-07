@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ionic.Zip;
@@ -16,6 +18,26 @@ namespace WoWBackupHelper
         public Form1()
         {
             InitializeComponent();
+                FillGridWithBackups();
+
+        }
+
+        private void FillGridWithBackups()
+        {
+
+            Regex reg = new Regex(@"WoW_UI-Addon_Backup_.*");
+
+            var files = Directory.GetFiles(@"C:\temp\backuptest\", "*.zip")
+                                 .Where(path => reg.IsMatch(path))
+                                 .ToList();
+            int row = 0;
+            foreach (var item in files)
+            {
+                dataGridView1.Rows.Add(1);
+                dataGridView1.Rows[row].Cells[0].Value = item;
+                row++;
+            }
+
         }
 
         private void btnStartBackup_Click(object sender, EventArgs e)
@@ -58,7 +80,7 @@ namespace WoWBackupHelper
                     zip.AddDirectory(interfaceFolder, "Interface");
 
                 zip.SaveProgress += this.SetProgress;
-                zip.Save(@"C:\temp\" + backupFileName);
+                zip.Save(@"C:\temp\backuptest\" + backupFileName);
             }
 
         }
@@ -73,6 +95,11 @@ namespace WoWBackupHelper
             {
                 progressBar1.CreateGraphics().DrawString("Done", new Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

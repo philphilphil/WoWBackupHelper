@@ -42,8 +42,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cbBackupInterface = new System.Windows.Forms.CheckBox();
             this.cbBackupWTF = new System.Windows.Forms.CheckBox();
+            this.cbBackupInterface = new System.Windows.Forms.CheckBox();
+            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -173,11 +175,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BackupName,
+            this.Date});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 31;
+            this.dataGridView1.RowTemplate.Height = 20;
             this.dataGridView1.Size = new System.Drawing.Size(352, 164);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -200,6 +205,16 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbBackupWTF
+            // 
+            this.cbBackupWTF.AutoSize = true;
+            this.cbBackupWTF.Location = new System.Drawing.Point(5, 125);
+            this.cbBackupWTF.Name = "cbBackupWTF";
+            this.cbBackupWTF.Size = new System.Drawing.Size(207, 17);
+            this.cbBackupWTF.TabIndex = 8;
+            this.cbBackupWTF.Text = "Backup WTF folder (contains settings)";
+            this.cbBackupWTF.UseVisualStyleBackColor = true;
+            // 
             // cbBackupInterface
             // 
             this.cbBackupInterface.AutoSize = true;
@@ -210,15 +225,18 @@
             this.cbBackupInterface.Text = "Backup Interface folder (contains Addons)";
             this.cbBackupInterface.UseVisualStyleBackColor = true;
             // 
-            // cbBackupWTF
+            // BackupName
             // 
-            this.cbBackupWTF.AutoSize = true;
-            this.cbBackupWTF.Location = new System.Drawing.Point(5, 125);
-            this.cbBackupWTF.Name = "cbBackupWTF";
-            this.cbBackupWTF.Size = new System.Drawing.Size(207, 17);
-            this.cbBackupWTF.TabIndex = 8;
-            this.cbBackupWTF.Text = "Backup WTF folder (contains settings)";
-            this.cbBackupWTF.UseVisualStyleBackColor = true;
+            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BackupName.HeaderText = "Name";
+            this.BackupName.Name = "BackupName";
+            this.BackupName.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // Form1
             // 
@@ -256,6 +274,8 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckBox cbBackupWTF;
         private System.Windows.Forms.CheckBox cbBackupInterface;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BackupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }
 }
 
