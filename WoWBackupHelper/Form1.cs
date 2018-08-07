@@ -18,13 +18,13 @@ namespace WoWBackupHelper
         public Form1()
         {
             InitializeComponent();
-                FillGridWithBackups();
+            FillGridWithBackups();
 
         }
 
         private void FillGridWithBackups()
         {
-
+            dataGridView1.Rows.Clear();
             Regex reg = new Regex(@"WoW_UI-Addon_Backup_.*");
 
             var files = Directory.GetFiles(@"C:\temp\backuptest\", "*.zip")
@@ -44,7 +44,7 @@ namespace WoWBackupHelper
         {
             if (ValidateConfig())
             {
-                CreateBackupNow();
+                CreateBackup();
             }
 
         }
@@ -60,7 +60,7 @@ namespace WoWBackupHelper
             return true;
         }
 
-        public void CreateBackupNow()
+        public void CreateBackup()
         {
             string wowPath = @"C:\Program Files (x86)\World of Warcraft\";
             string wtfFolder = wowPath + "WTF";
@@ -82,6 +82,7 @@ namespace WoWBackupHelper
                 zip.SaveProgress += this.SetProgress;
                 zip.Save(@"C:\temp\backuptest\" + backupFileName);
             }
+            FillGridWithBackups();
 
         }
 
@@ -95,11 +96,6 @@ namespace WoWBackupHelper
             {
                 progressBar1.CreateGraphics().DrawString("Done", new Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }
