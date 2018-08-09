@@ -44,8 +44,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbBackupWTF = new System.Windows.Forms.CheckBox();
             this.cbBackupInterface = new System.Windows.Forms.CheckBox();
-            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -176,12 +176,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BackupName,
-            this.Date});
+            this.Date,
+            this.BackupName});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 20;
             this.dataGridView1.Size = new System.Drawing.Size(352, 164);
             this.dataGridView1.TabIndex = 3;
@@ -225,18 +227,21 @@
             this.cbBackupInterface.Text = "Backup Interface folder (contains Addons)";
             this.cbBackupInterface.UseVisualStyleBackColor = true;
             // 
-            // BackupName
-            // 
-            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BackupName.HeaderText = "Name";
-            this.BackupName.Name = "BackupName";
-            this.BackupName.ReadOnly = true;
-            // 
             // Date
             // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
+            this.Date.Width = 55;
+            // 
+            // BackupName
+            // 
+            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.BackupName.HeaderText = "Type";
+            this.BackupName.Name = "BackupName";
+            this.BackupName.ReadOnly = true;
+            this.BackupName.Width = 56;
             // 
             // Form1
             // 
@@ -274,8 +279,8 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckBox cbBackupWTF;
         private System.Windows.Forms.CheckBox cbBackupInterface;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BackupName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BackupName;
     }
 }
 

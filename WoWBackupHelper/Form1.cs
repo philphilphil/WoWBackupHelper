@@ -33,16 +33,15 @@ namespace WoWBackupHelper
             foreach (var item in backupFiles)
             {
                 dataGridView1.Rows.Add(1);
-                dataGridView1.Rows[row].Cells[0].Value = item.Type;
-                dataGridView1.Rows[row].Cells[1].Value = item.Date;
+                dataGridView1.Rows[row].Cells[1].Value = item.Type;
+                dataGridView1.Rows[row].Cells[0].Value = item.Date;
                 row++;
             }
-
         }
 
         private List<BackupDataItem> GetBackupFiles(string pathToBackups)
         {
-            string regexPattern = @"WoW_UI-(Full|Addon|Settings)-Backup_(.*).zip";
+            string regexPattern = @"WoW_UI-(Full|Addons|Settings)-Backup_(.*).zip";
             List<BackupDataItem> backupItemList = new List<BackupDataItem>();
             Regex reg = new Regex(regexPattern);
 
