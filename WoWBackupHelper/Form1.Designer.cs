@@ -41,11 +41,11 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbBackupWTF = new System.Windows.Forms.CheckBox();
             this.cbBackupInterface = new System.Windows.Forms.CheckBox();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -188,6 +188,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(352, 164);
             this.dataGridView1.TabIndex = 3;
             // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 55;
+            // 
+            // BackupName
+            // 
+            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.BackupName.HeaderText = "Type";
+            this.BackupName.Name = "BackupName";
+            this.BackupName.ReadOnly = true;
+            this.BackupName.Width = 56;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.cbBackupWTF);
@@ -227,22 +243,6 @@
             this.cbBackupInterface.Text = "Backup Interface folder (contains Addons)";
             this.cbBackupInterface.UseVisualStyleBackColor = true;
             // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 55;
-            // 
-            // BackupName
-            // 
-            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BackupName.HeaderText = "Type";
-            this.BackupName.Name = "BackupName";
-            this.BackupName.ReadOnly = true;
-            this.BackupName.Width = 56;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +251,7 @@
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "WoWBackupHelper";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
