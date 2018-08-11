@@ -35,7 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxSavePath = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -117,15 +117,15 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Backup destination path";
             // 
-            // textBox1
+            // txtBoxSavePath
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(4, 59);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "C:\\Programme\\jkdsjdskjd";
+            this.txtBoxSavePath.Enabled = false;
+            this.txtBoxSavePath.Location = new System.Drawing.Point(4, 59);
+            this.txtBoxSavePath.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxSavePath.Name = "txtBoxSavePath";
+            this.txtBoxSavePath.Size = new System.Drawing.Size(241, 20);
+            this.txtBoxSavePath.TabIndex = 4;
+            this.txtBoxSavePath.Text = "C:\\Programme\\jkdsjdskjd";
             // 
             // tabControl1
             // 
@@ -212,7 +212,7 @@
             this.tabPage2.Controls.Add(this.txtBoxWoWFolder);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtBoxSavePath);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -270,7 +270,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxSavePath;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

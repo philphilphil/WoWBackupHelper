@@ -27,7 +27,10 @@ namespace WoWBackupHelper
 
         private void LoadSettingsTab()
         {
-            throw new NotImplementedException();
+            txtBoxWoWFolder.Text = Settings.Default.WoWPath;
+            txtBoxSavePath.Text = Settings.Default.SavePath;
+            cbBackupInterface.Checked = Settings.Default.BackupInterface;
+            cbBackupWTF.Checked = Settings.Default.BackupSettings;
         }
 
         private void FillGridWithBackups()
