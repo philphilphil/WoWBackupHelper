@@ -39,13 +39,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbBackupWTF = new System.Windows.Forms.CheckBox();
             this.cbBackupInterface = new System.Windows.Forms.CheckBox();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BackupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fill = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,7 +78,7 @@
             // 
             // btnStartBackup
             // 
-            this.btnStartBackup.Location = new System.Drawing.Point(5, 200);
+            this.btnStartBackup.Location = new System.Drawing.Point(129, 200);
             this.btnStartBackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartBackup.Name = "btnStartBackup";
             this.btnStartBackup.Size = new System.Drawing.Size(96, 37);
@@ -141,7 +141,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.progressBar1);
-            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnStartBackup);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -160,17 +159,6 @@
             this.progressBar1.Size = new System.Drawing.Size(345, 23);
             this.progressBar1.TabIndex = 5;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(255, 200);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 37);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Restore selected";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -178,7 +166,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
-            this.BackupName});
+            this.BackupName,
+            this.Fill});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
@@ -188,22 +177,6 @@
             this.dataGridView1.RowTemplate.Height = 20;
             this.dataGridView1.Size = new System.Drawing.Size(352, 164);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 55;
-            // 
-            // BackupName
-            // 
-            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BackupName.HeaderText = "Type";
-            this.BackupName.Name = "BackupName";
-            this.BackupName.ReadOnly = true;
-            this.BackupName.Width = 56;
             // 
             // tabPage2
             // 
@@ -244,12 +217,37 @@
             this.cbBackupInterface.Text = "Backup Interface folder (contains Addons)";
             this.cbBackupInterface.UseVisualStyleBackColor = true;
             // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // BackupName
+            // 
+            this.BackupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.BackupName.HeaderText = "Type";
+            this.BackupName.Name = "BackupName";
+            this.BackupName.ReadOnly = true;
+            this.BackupName.Width = 56;
+            // 
+            // Fill
+            // 
+            this.Fill.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Fill.HeaderText = "Restore";
+            this.Fill.Name = "Fill";
+            this.Fill.ReadOnly = true;
+            this.Fill.Text = "Restore";
+            this.Fill.ToolTipText = "Restores this backup. Create a backup before restore.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 278);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "WoWBackupHelper";
@@ -275,13 +273,13 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckBox cbBackupWTF;
         private System.Windows.Forms.CheckBox cbBackupInterface;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn BackupName;
+        private System.Windows.Forms.DataGridViewButtonColumn Fill;
     }
 }
 
