@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ionic.Zip;
+using WoWBackupHelper.Properties;
 
 namespace WoWBackupHelper
 {
@@ -19,15 +20,21 @@ namespace WoWBackupHelper
         public Form1()
         {
             InitializeComponent();
+            LoadSettingsTab();
             FillGridWithBackups();
 
+        }
+
+        private void LoadSettingsTab()
+        {
+            throw new NotImplementedException();
         }
 
         private void FillGridWithBackups()
         {
             dataGridView1.Rows.Clear();
 
-            List<BackupDataItem> backupFiles = GetBackupFiles(@"C:\temp\backuptest\");
+            List<BackupDataItem> backupFiles = GetBackupFiles(Settings.Default.SavePath);
 
             int row = 0;
             foreach (var item in backupFiles)
