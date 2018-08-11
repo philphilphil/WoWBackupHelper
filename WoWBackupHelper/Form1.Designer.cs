@@ -169,6 +169,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Restore selected";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // dataGridView1
             // 
